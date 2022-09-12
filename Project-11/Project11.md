@@ -105,6 +105,8 @@ From here, also based on the issue  after doing the below task **before running 
  `ssh ubuntu@<privateipadress>`
 
 - Update inventory/dev.yml file with the code below:
+
+
  `[nfs]
  <NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user
  
@@ -122,6 +124,7 @@ From here, also based on the issue  after doing the below task **before running 
 # CREATE A COMMON PLAYBOOK
 
 - The below playbook is divided into two parts, each of them is intended to perform the same task: install wireshark utility (or make sure it is updated to the latest version) on the RHEL 8 and Ubuntu servers. It uses root user to perform this task and respective package manager: yum for RHEL 8 and apt for Ubuntu.
+
 
 	`---
  - name: update web, nfs and db servers
@@ -149,7 +152,6 @@ From here, also based on the issue  after doing the below task **before running 
       apt:
         name: wireshark
         state: latest`
-
 
 # Update GIT with the latest code
 
