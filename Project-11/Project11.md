@@ -1,4 +1,4 @@
-# H1 ANSIBLE CONFIGURATION MANAGEMENT
+#  ANSIBLE CONFIGURATION MANAGEMENT
 
 - Project 7-10 consisted of manual operations for setting up virtual servers, installing and configuring required softwares.
 
@@ -9,7 +9,7 @@
 ![alt text](./Images/Pic%202.jpg)
 
 
-# H1 INSTALL AND CONFIGURE ANSIBLE ON EC2 INSTANCE
+#  INSTALL AND CONFIGURE ANSIBLE ON EC2 INSTANCE
 
 - Install Ansible
 	`sudo apt update`
@@ -44,7 +44,7 @@ ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 
 - Clone the repositry into VSCODE
 
-# H1 BEGIN ANSIBLE DEVELOPMENT
+#  BEGIN ANSIBLE DEVELOPMENT
 
 - Create a new branch that will be used for development of a new feature using:
 
@@ -58,7 +58,7 @@ ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 
  - Within the inventory file create a file for each development stage (Development, Staging Testing and Production).yml
 
-# H1 Set up an Ansible Inventory
+#  Set up an Ansible Inventory
 
 - Ansible uses TCP port 22 by default, which means it needs to ssh into target servers from Jenkins-Ansible host.
 
