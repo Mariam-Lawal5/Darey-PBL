@@ -108,16 +108,21 @@ From here, also based on the issue  after doing the below task **before running 
 
 
  `[nfs]
+
  <NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user
  
  [webservers]
+
  <Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
+
  <Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
  
  [db]
+
  <Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
  
  [lb]
+
  <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
 
 
@@ -127,6 +132,7 @@ From here, also based on the issue  after doing the below task **before running 
 
 
 	`---
+
  - name: update web, nfs and db servers
   hosts: webservers, nfs, db
   remote_user: ec2-user
@@ -137,6 +143,7 @@ From here, also based on the issue  after doing the below task **before running 
       yum:
         name: wireshark
         state: latest
+
 
  - name: update LB server
   hosts: lb
