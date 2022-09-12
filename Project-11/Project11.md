@@ -80,7 +80,7 @@ ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 
  `ssh-add <Name of your key.pem>`
 
-- Then run the codes below to get connected to your EC2 instance (Make sure you have cd into where you pem key is stored):
+- Then run the codes below to get connected to your EC2 instance (Make sure you have cd into where you pem key is stored): **I saved the pem key in the ssh folder then also ran the command again to resolved the connection issue I was having**
 
  `eval `ssh-agent -s``
 
@@ -92,7 +92,11 @@ ls /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/
 - Now, ssh into your Jenkins-Ansible server using ssh-agent
  `ssh -A ubuntu@public-ip`
 
+ ![alt text](./Images/Pic%2010.jpg)
+
 ![alt text](./Images/Pic%207.jpg)
+
+From here, also based on the issue  after doing the below task **before running my ansible playbook command**  I sshed into the my jenkin- ansible server using the ubuntu@public-ip of the jenkin server then run the ansible playbook command below for the wireshark installation , this resolved the error I was having.
 
 - Then ssh into you other servers from your **jenkin-ansible server** to check that you are able to connect to your RHEL and ubuntu target servers:
 
@@ -183,8 +187,18 @@ Then on git main branch do a 	` git pull`
 
 - Run the ansible-playbook command
 
-ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/5/archive/inventory/dev.yml /var/lib/jenkins/jobs/ansible/builds/5/archive/playbooks/common.yml
+`ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/9/archive/inventory/dev.yml /var/lib/jenkins/jobs/ansible/builds/9/archive/playbooks/common.yml`
+
+![alt text](./Images/Pic%2011.jpg)
 
 - Verify that wireshark has been on all servers:
 
 `which wireshark`
+
+`wireshark --version`
+
+![alt text](./Images/Pic%2012.jpg)
+
+This what the update architecture looks like:
+
+![alt text](./Images/Pic%2013.jpg)
