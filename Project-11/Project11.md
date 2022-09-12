@@ -106,60 +106,12 @@ From here, also based on the issue  after doing the below task **before running 
 
 - Update inventory/dev.yml file with the code below:
 
-
- `[nfs]
-
- <NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user
- 
- [webservers]
-
- <Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
-
- <Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
- 
- [db]
-
- <Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
- 
- [lb]
-
- <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
-
-
+	![alt text](./Images/Pic%2014.jpg)
 # CREATE A COMMON PLAYBOOK
 
 - The below playbook is divided into two parts, each of them is intended to perform the same task: install wireshark utility (or make sure it is updated to the latest version) on the RHEL 8 and Ubuntu servers. It uses root user to perform this task and respective package manager: yum for RHEL 8 and apt for Ubuntu.
 
-
-	`---
-
- - name: update web, nfs and db servers
-  hosts: webservers, nfs, db
-  remote_user: ec2-user
-  become: yes
-  become_user: root
-  tasks:
-    - name: ensure wireshark is at the latest version
-      yum:
-        name: wireshark
-        state: latest
-
-
- - name: update LB server
-  hosts: lb
-  remote_user: ubuntu
-  become: yes
-  become_user: root
-  tasks:
-    - name: Update apt repo
-      apt: 
-        update_cache: yes
-
-    - name: ensure wireshark is at the latest version
-      apt:
-        name: wireshark
-        state: latest`
-
+	![alt text](./Images/Pic%2015.jpg)
 # Update GIT with the latest code
 
 - To Commit the code into GitHub execute the below command and make a pull request in branch folder:
