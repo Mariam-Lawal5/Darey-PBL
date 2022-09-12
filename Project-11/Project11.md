@@ -106,25 +106,25 @@ From here, also based on the issue  after doing the below task **before running 
 
 - Update inventory/dev.yml file with the code below:
 
-	`[nfs]
-<NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
+ `[nfs]
+ <NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
 
-[webservers]
-<Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
-<Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
+ [webservers]
+ <Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
+ <Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
 
-[db]
-<Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
+ [db]
+ <Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
 
-[lb]
-<Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
+ [lb]
+ <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
 
 # CREATE A COMMON PLAYBOOK
 
 - The below playbook is divided into two parts, each of them is intended to perform the same task: install wireshark utility (or make sure it is updated to the latest version) on the RHEL 8 and Ubuntu servers. It uses root user to perform this task and respective package manager: yum for RHEL 8 and apt for Ubuntu.
 
 	`---
-- name: update web, nfs and db servers
+ - name: update web, nfs and db servers
   hosts: webservers, nfs, db
   remote_user: ec2-user
   become: yes
@@ -135,7 +135,7 @@ From here, also based on the issue  after doing the below task **before running 
         name: wireshark
         state: latest
 
-- name: update LB server
+ - name: update LB server
   hosts: lb
   remote_user: ubuntu
   become: yes
@@ -154,15 +154,16 @@ From here, also based on the issue  after doing the below task **before running 
 # Update GIT with the latest code
 
 - To Commit the code into GitHub execute the below command and make a pull request in branch folder:
-git status
 
-git add <selected files>
+	`git status`
 
-git commit -m "commit message"
+	`git add <selected files>`
 
-git push origin <branch name>
+	`git commit -m "commit message"`
 
-git checkout main 
+	`git push origin <branch name>`
+
+	`git checkout main` 
 
 Then on git main branch do a 	` git pull`
 
