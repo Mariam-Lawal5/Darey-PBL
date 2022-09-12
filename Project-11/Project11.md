@@ -105,19 +105,19 @@ From here, also based on the issue  after doing the below task **before running 
  `ssh ubuntu@<privateipadress>`
 
 - Update inventory/dev.yml file with the code below:
-
  `[nfs]
- <NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
+<NFS-Server-Private-IP-Address> ansible_ssh_user='ec2-user'
 
- [webservers]
- <Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
- <Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
+[webservers]
+<Web-Server1-Private-IP-Address> ansible_ssh_user='ec2-user'
+<Web-Server2-Private-IP-Address> ansible_ssh_user='ec2-user'
 
- [db]
- <Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
+[db]
+<Database-Private-IP-Address> ansible_ssh_user='ec2-user' 
 
- [lb]
- <Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
+[lb]
+<Load-Balancer-Private-IP-Address> ansible_ssh_user='ubuntu'`
+
 
 # CREATE A COMMON PLAYBOOK
 
