@@ -72,7 +72,9 @@ The command below allows the apache server to map the ip addresses of the web se
 
 ![alt text](./Images/pic%200.1.png)
 
-- Unmount /var/log/httpd/ from the Web Servers to the NFS Server sudo umount -f /var/log/httpd and make sure the Web Server has its own log directory
+- Unmount /var/log/httpd/ from the Web Servers to the NFS Server and make sure the Web Server has its own log directory
+
+ `sudo umount -f /var/log/httpd` 
 
 Opened two terminals for both Web Servers and run following command:
 
