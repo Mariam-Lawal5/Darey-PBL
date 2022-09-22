@@ -94,7 +94,7 @@ server {
 
 - Create a certificate for your domain to make it is secure:
 
- `sudo certbot --nginx -d esthertooling.co.uk -d www.mariamtooling.site`
+ `sudo certbot --nginx -d www.mariamtooling.site`
 
  ![alt text](./Images/pic%209.png)
 

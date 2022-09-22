@@ -138,11 +138,14 @@ Then on git main branch do a 	` git pull`
 
 - Update the ssh config file with below code and connect to ansible via ssh on vscode terminal:
 
-`Host alias
+ `Host alias
+
     HostName hostname
+
     User user
-    ForwardAgent yes
-`
+
+    ForwardAgent yes`
+	
 ![alt text](./Images/Pic%209.jpg)
 
 - Open the ansible directory into vscode.
