@@ -115,7 +115,7 @@ Declare another variable in both roles load_balancer_is_required and set its val
          - import_playbook: ../static-assignments/loadbalancers.yml
         when: load_balancer_is_required`
 
-![alt text](./Images/pic%2010.jpg)
+![alt text](./Images/pic%204.jpg)
 
 - Now we can make use of env-vars\uat.yml file to define which loadbalancer to use in UAT the environment by setting the respective environmental variable to true.
 
